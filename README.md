@@ -1,2 +1,2 @@
 # lol-finder
-Find all the champions of video game League of legends
+Find all the champions of League of legends.
