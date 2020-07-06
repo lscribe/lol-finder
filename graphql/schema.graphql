@@ -1,0 +1,12 @@
+
+type Query {
+    champions: [Champion!]! @paginate
+    champion(
+        id: ID 
+        name: String
+        category: String 
+        @eq
+    ): Champion! @find
+}
+
+#import types/champion.graphql
