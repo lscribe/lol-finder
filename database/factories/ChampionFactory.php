@@ -18,7 +18,10 @@ use Faker\Generator as Faker;
 
 $factory->define(Champion::class, function (Faker $faker) {
     return [
-        'name'     => $faker->name,
-        'category' => $faker->word,
-    ];
+        'id'    => $faker->firstName(),
+        'title' => $faker->word(),
+        'lore'  => $faker->sentence(),
+        'image' => $faker->imageUrl(),
+        'tags'  => $faker->word()
+        ];
 });
