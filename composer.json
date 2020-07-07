@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.2.5",
         "laravel/lumen-framework": "^7.0",
+        "league/flysystem": "^1.0",
         "mll-lab/laravel-graphql-playground": "^2.1",
         "nuwave/lighthouse": "^4.15"
     },

@@ -10,8 +10,10 @@ scalar DateTimeTz @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Da
 
 type Champion {
     id: ID!
-    name: String!
-    category: String!
+    title: String!
+    lore: String!
+    image: String!
+    tags: String!
     created_at: DateTime!
     updated_at: DateTime!
 }
