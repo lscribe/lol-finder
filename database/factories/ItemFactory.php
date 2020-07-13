@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Champion;
+use App\Models\Item;
 use Faker\Generator as Faker;
 
 /*
@@ -14,12 +14,13 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(Champion::class, function (Faker $faker) {
+$factory->define(Item::class, function (Faker $faker) {
     return [
-        'id'    => $faker->firstName(),
-        'title' => $faker->word(),
-        'lore'  => $faker->sentence(),
-        'image' => $faker->imageUrl(),
-        'tags'  => $faker->word()
+        'name'        => $faker->word(),
+        'description' => $faker->sentence(),
+        'image'       => $faker->imageUrl(),
+        'cost'        => $faker->randomDigitNotNull,
+        'sell'        => $faker->randomDigitNotNull,
+        'tags'        => $faker->word()
         ];
 });

@@ -1,7 +1,6 @@
 <?php
 
 use App\Models\Champion;
-use App\Models\Module;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Storage;
 
@@ -17,7 +16,7 @@ class ChampionTableSeeder extends Seeder
                     'id'    => $champion['id'],
                     'title' => $champion['title'],
                     'lore'  => $champion['blurb'],
-                    'image' => config('app.image_url') . $champion['image']['full'],
+                    'image' => config('app.champion_img_url') . $champion['image']['full'],
                     'tags'  => implode(',', $champion['tags']),
                 ]);
             }

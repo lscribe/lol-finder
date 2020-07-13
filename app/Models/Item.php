@@ -7,37 +7,36 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Query\Builder;
 
-class Champion extends Model
+class Item extends Model
 {
-    /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
-     * The "type" of the primary key ID.
-     *
-     * @var string
-     */
-    protected $keyType = 'string';
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'id',
-        'title',
-        'lore',
+        'name',
+        'description',
         'image',
+        'cost',
+        'sell',
         'tags'
     ];
 
     /**
-     * Search champion that contains keyword in tags.
+     * Search item that contains keyword in name.
+     *
+     * @param Builder $query
+     * @param string  $name
+     * @return Builder
+     */
+    public function scopeWhereNameContains($query, string $name)
+    {
+        return $query->where('name', 'LIKE', '%' . $name . '%');
+    }
+
+    /**
+     * Search item that contains keyword in tags.
      *
      * @param Builder $query
      * @param string  $tags
