@@ -1,0 +1,19 @@
+
+extend type Query {
+    items(
+        name: String @builder(method: "App\\Models\\Item@scopeWhereNameContains")
+        tags: String @builder(method: "App\\Models\\Item@scopeWhereTagsContains")
+    ): [Item!]! @all
+}
+
+type Item {
+    id: ID!
+    name: String!
+    description: String!
+    image: String!
+    cost: Int!
+    sell: Int!
+    tags: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
